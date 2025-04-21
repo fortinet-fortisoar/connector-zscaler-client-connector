@@ -1,0 +1,518 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "7e2edbae-ab3e-4a1f-a0a6-c045c2d9d57a",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "f581e487-a48e-48ad-b4d4-891b4e8ee057",
+          "collection": "/api/3/workflow_collections/7e2edbae-ab3e-4a1f-a0a6-c045c2d9d57a",
+          "steps": [
+            {
+              "uuid": "940a6d07-f78c-43ea-9035-916bfafa46ba",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "a20c5f3c-cdd3-4e87-b5b5-21ddeea3bc0b",
+              "@type": "WorkflowStep",
+              "name": "Get Enrolled Device List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Zscaler Client Connector",
+                "config": "",
+                "params": {
+                  "username": "",
+                  "osType": "",
+                  "page": "",
+                  "pageSize": ""
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-client-connector",
+                "operation": "get_enrolled_device_list",
+                "operationTitle": "Get Enrolled Device List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a list of all enrolled devices of your organization and their basic details from Zscaler Client Connector based on input parameters that you have specified.",
+          "name": "Get Enrolled Device List",
+          "tag": "#Zscaler Client Connector",
+          "recordTags": [
+            "Zscaler",
+            "zscaler-client-connector"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/940a6d07-f78c-43ea-9035-916bfafa46ba",
+          "routes": [
+            {
+              "uuid": "418924bb-16fc-4435-9343-e0b2a3f273ef",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Enrolled Device List",
+              "sourceStep": "/api/3/workflow_steps/940a6d07-f78c-43ea-9035-916bfafa46ba",
+              "targetStep": "/api/3/workflow_steps/a20c5f3c-cdd3-4e87-b5b5-21ddeea3bc0b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "66d234fd-38bc-471e-a173-6ddded6a58c0",
+          "collection": "/api/3/workflow_collections/7e2edbae-ab3e-4a1f-a0a6-c045c2d9d57a",
+          "steps": [
+            {
+              "uuid": "4374aff5-829c-4d94-93d2-93887349b1d0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "4d9271bc-083a-4381-a08b-0186b2ae6667",
+              "@type": "WorkflowStep",
+              "name": "Get Enrolled Device Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Zscaler Client Connector",
+                "config": "",
+                "params": {
+                  "udid": "",
+                  "username": ""
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-client-connector",
+                "operation": "get_enrolled_device_details",
+                "operationTitle": "Get Enrolled Device Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a device details of enrolled devices of your organization from Zscaler Client Connector based on input parameters that you have specified.",
+          "name": "Get Enrolled Device Details",
+          "tag": "#Zscaler Client Connector",
+          "recordTags": [
+            "Zscaler",
+            "zscaler-client-connector"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4374aff5-829c-4d94-93d2-93887349b1d0",
+          "routes": [
+            {
+              "uuid": "c5a483e3-0881-4c0e-bb5a-24cf109fbfeb",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Enrolled Device Details",
+              "sourceStep": "/api/3/workflow_steps/4374aff5-829c-4d94-93d2-93887349b1d0",
+              "targetStep": "/api/3/workflow_steps/4d9271bc-083a-4381-a08b-0186b2ae6667"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ce0cd3c2-a9dd-4f54-9f32-7ddcb39fcb6b",
+          "collection": "/api/3/workflow_collections/7e2edbae-ab3e-4a1f-a0a6-c045c2d9d57a",
+          "steps": [
+            {
+              "uuid": "1a0627e0-4f5e-4e28-bf51-8a819fbef231",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "d3d71a14-0ca7-472f-ac85-1cd31dce7d5f",
+              "@type": "WorkflowStep",
+              "name": "Get Device OTP",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Zscaler Client Connector",
+                "config": "",
+                "params": {
+                  "udid": ""
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-client-connector",
+                "operation": "get_device_otp",
+                "operationTitle": "Get Device OTP"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve the one-time password (OTP) for a specific device. These single-use passwords are unique and tied to the device Unique Device Identifier (UDID). It is made of 10 random alphanumeric characters and can only be used once.",
+          "name": "Get Device OTP",
+          "tag": "#Zscaler Client Connector",
+          "recordTags": [
+            "Zscaler",
+            "zscaler-client-connector"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1a0627e0-4f5e-4e28-bf51-8a819fbef231",
+          "routes": [
+            {
+              "uuid": "2a283e84-efe3-4b95-baf2-7825efbb5c67",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device OTP",
+              "sourceStep": "/api/3/workflow_steps/1a0627e0-4f5e-4e28-bf51-8a819fbef231",
+              "targetStep": "/api/3/workflow_steps/d3d71a14-0ca7-472f-ac85-1cd31dce7d5f"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5cbba93a-ddcf-49ea-9254-9b9e47584bcb",
+          "collection": "/api/3/workflow_collections/7e2edbae-ab3e-4a1f-a0a6-c045c2d9d57a",
+          "steps": [
+            {
+              "uuid": "98f9bbf7-deda-4741-99fa-693b081535d9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "1aa3009f-02de-49db-969a-42edfd1dcba4",
+              "@type": "WorkflowStep",
+              "name": "Get Device App Profile Password",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Zscaler Client Connector",
+                "config": "",
+                "params": {
+                  "username": "",
+                  "osType": ""
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-client-connector",
+                "operation": "get_device_app_profile_password",
+                "operationTitle": "Get Device App Profile Password"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve the app profile password for a specific device. You can determine the assigned global passwords by using the username and os type of a device.",
+          "name": "Get Device App Profile Password",
+          "tag": "#Zscaler Client Connector",
+          "recordTags": [
+            "Zscaler",
+            "zscaler-client-connector"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/98f9bbf7-deda-4741-99fa-693b081535d9",
+          "routes": [
+            {
+              "uuid": "7b20a341-af34-40d6-86b9-45d7acf44cc0",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device App Profile Password",
+              "sourceStep": "/api/3/workflow_steps/98f9bbf7-deda-4741-99fa-693b081535d9",
+              "targetStep": "/api/3/workflow_steps/1aa3009f-02de-49db-969a-42edfd1dcba4"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "28ffadd0-13f8-434f-b4ec-42d52385d819",
+          "collection": "/api/3/workflow_collections/7e2edbae-ab3e-4a1f-a0a6-c045c2d9d57a",
+          "steps": [
+            {
+              "uuid": "80a94954-752e-4faa-b2be-a4484c96431f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "fb52574f-3d68-4546-94dc-51425818f0b7",
+              "@type": "WorkflowStep",
+              "name": "Download Device Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Zscaler Client Connector",
+                "config": "",
+                "params": {
+                  "osTypes": "",
+                  "registrationTypes": ""
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-client-connector",
+                "operation": "download_device_details",
+                "operationTitle": "Download Device Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Downloads or exports device information as a CSV file from Zscaler Client Connector based on input parameters that you have specified.",
+          "name": "Download Device Details",
+          "tag": "#Zscaler Client Connector",
+          "recordTags": [
+            "Zscaler",
+            "zscaler-client-connector"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/80a94954-752e-4faa-b2be-a4484c96431f",
+          "routes": [
+            {
+              "uuid": "8f1cf84d-8343-40c4-9db1-1d341b4c8cf4",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Download Device Details",
+              "sourceStep": "/api/3/workflow_steps/80a94954-752e-4faa-b2be-a4484c96431f",
+              "targetStep": "/api/3/workflow_steps/fb52574f-3d68-4546-94dc-51425818f0b7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6361604c-d2ba-4778-96c8-1d89b5dcc85a",
+          "collection": "/api/3/workflow_collections/7e2edbae-ab3e-4a1f-a0a6-c045c2d9d57a",
+          "steps": [
+            {
+              "uuid": "f243ee5f-c5a8-40c2-ba2d-f121f0229af8",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "8752e564-ea49-4b59-8b7e-b888f2a31958",
+              "@type": "WorkflowStep",
+              "name": "Download Service Status of Devices",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Zscaler Client Connector",
+                "config": "",
+                "params": {
+                  "osTypes": "",
+                  "registrationTypes": ""
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-client-connector",
+                "operation": "download_service_status_of_devices",
+                "operationTitle": "Download Service Status of Devices"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Downloads service status of all devices as a CSV file from Zscaler Client Connector based on input parameters that you have specified.",
+          "name": "Download Service Status of Devices",
+          "tag": "#Zscaler Client Connector",
+          "recordTags": [
+            "Zscaler",
+            "zscaler-client-connector"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f243ee5f-c5a8-40c2-ba2d-f121f0229af8",
+          "routes": [
+            {
+              "uuid": "ce903dbe-0df1-4e65-8154-8e379c9ff03f",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Download Service Status of Devices",
+              "sourceStep": "/api/3/workflow_steps/f243ee5f-c5a8-40c2-ba2d-f121f0229af8",
+              "targetStep": "/api/3/workflow_steps/8752e564-ea49-4b59-8b7e-b888f2a31958"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3628000d-cc64-4155-a468-9e91cc7e00f5",
+          "collection": "/api/3/workflow_collections/7e2edbae-ab3e-4a1f-a0a6-c045c2d9d57a",
+          "steps": [
+            {
+              "uuid": "00f42570-69bb-4830-b88d-a20a9094b8b4",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "cd5d0736-25cd-44a4-9f6d-1e733b976786",
+              "@type": "WorkflowStep",
+              "name": "Execute an API Request",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Zscaler Client Connector",
+                "config": "",
+                "params": {
+                  "method": "",
+                  "endpoint": "",
+                  "query_params": "",
+                  "payload": ""
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-client-connector",
+                "operation": "execute_an_api_call",
+                "operationTitle": "Execute an API Request"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Sends an API request to an API endpoint based on specified HTTP method, endpoint, and other input parameters that you have specified, enabling flexible API interactions tailored to user needs.",
+          "name": "Execute an API Request",
+          "tag": "#Zscaler Client Connector",
+          "recordTags": [
+            "Zscaler",
+            "zscaler-client-connector"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/00f42570-69bb-4830-b88d-a20a9094b8b4",
+          "routes": [
+            {
+              "uuid": "299f37c5-46e3-4afa-9167-b84308abcbfc",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Execute an API Request",
+              "sourceStep": "/api/3/workflow_steps/00f42570-69bb-4830-b88d-a20a9094b8b4",
+              "targetStep": "/api/3/workflow_steps/cd5d0736-25cd-44a4-9f6d-1e733b976786"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Zscaler Client Connector - 1.0.0",
+      "description": "Zscaler Client Connector™ is a lightweight agent for user endpoints, enabling hybrid work through secure, fast, reliable access to any app over any network.",
+      "visible": true,
+      "recordTags": [
+        "Zscaler",
+        "zscaler-client-connector"
+      ]
+    }
+  ]
+}

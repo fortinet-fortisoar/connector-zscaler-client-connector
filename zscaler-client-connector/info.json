@@ -1,0 +1,343 @@
+{
+  "name": "zscaler-client-connector",
+  "label": "Zscaler Client Connector",
+  "description": "Zscaler Client Connector™ is a lightweight agent for user endpoints, enabling hybrid work through secure, fast, reliable access to any app over any network.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Network Security",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "The service-based URL of the Zscaler Client Connector to which you connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_url",
+        "value": "https://api.zsapi.net",
+        "tooltip": "The service-based URL of the Zscaler Client Connector to which you connect and perform the automated operations."
+      },
+      {
+        "title": "Client ID",
+        "description": "Unique ID of the Zscaler Client Connector that is used to create an authentication token required to access the API.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "client_id",
+        "tooltip": "Unique ID of the Zscaler Client Connector that is used to create an authentication token required to access the API."
+      },
+      {
+        "title": "Client Secret",
+        "description": "Unique Client Secret of the Zscaler Client Connector that is used to create an authentication token required to access the API.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "client_secret",
+        "tooltip": "Unique Client Secret of the Zscaler Client Connector that is used to create an authentication token required to access the API."
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Enrolled Device List",
+      "operation": "get_enrolled_device_list",
+      "category": "investigation",
+      "annotation": "get_enrolled_device_list",
+      "description": "Retrieve a list of all enrolled devices of your organization and their basic details from Zscaler Client Connector based on input parameters that you have specified.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Username",
+          "description": "Filter devices by enrolled user name in the Zscaler Client Connector portal to identify and manage devices associated with a specific user.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "username",
+          "tooltip": "Filter devices by enrolled user name in the Zscaler Client Connector portal to identify and manage devices associated with a specific user."
+        },
+        {
+          "title": "OS Type",
+          "description": "Filter by device operating system type in the Zscaler Client Connector.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "osType",
+          "tooltip": "Filter by device operating system type in the Zscaler Client Connector."
+        },
+        {
+          "title": "Page Number",
+          "description": "Specify the page number from which to retrieve results when pagination is applied. This parameter is used to fetch a specific subset of results based on the page number, helping to break large datasets into manageable chunks.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "tooltip": "Specify the page number from which to retrieve results when pagination is applied. This parameter is used to fetch a specific subset of results based on the page number, helping to break large datasets into manageable chunks."
+        },
+        {
+          "title": "Page Size",
+          "description": "Specify the maximum number of results this operation should return, per page, in the response. If not provided, the default page size is 50. The max page size is 5000.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "pageSize",
+          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response. If not provided, the default page size is 50. The max page size is 5000."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "title": "Get Enrolled Device Details",
+      "operation": "get_enrolled_device_details",
+      "category": "investigation",
+      "annotation": "get_enrolled_device_details",
+      "description": "Retrieve a device details of enrolled devices of your organization from Zscaler Client Connector based on input parameters that you have specified.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Unique Device Identifier (UDID)",
+          "description": "Filter by unique device identifier in the Zscaler Client Connector.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "udid",
+          "tooltip": "Filter by unique device identifier in the Zscaler Client Connector."
+        },
+        {
+          "title": "Username",
+          "description": "Filter devices by enrolled user name in the Zscaler Client Connector portal to identify and manage devices associated with a specific user.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "username",
+          "tooltip": "Filter devices by enrolled user name in the Zscaler Client Connector portal to identify and manage devices associated with a specific user."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "title": "Get Device OTP",
+      "operation": "get_device_otp",
+      "category": "investigation",
+      "annotation": "get_device_otp",
+      "description": "Retrieve the one-time password (OTP) for a specific device. These single-use passwords are unique and tied to the device Unique Device Identifier (UDID). It is made of 10 random alphanumeric characters and can only be used once.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Unique Device Identifier (UDID)",
+          "description": "Filter by unique device identifier in the Zscaler Client Connector.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "udid",
+          "tooltip": "Filter by unique device identifier in the Zscaler Client Connector."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "title": "Get Device App Profile Password",
+      "operation": "get_device_app_profile_password",
+      "category": "investigation",
+      "annotation": "get_device_app_profile_password",
+      "description": "Retrieve the app profile password for a specific device. You can determine the assigned global passwords by using the username and os type of a device.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Username",
+          "description": "Filter devices by enrolled user name in the Zscaler Client Connector portal to identify and manage devices associated with a specific user.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "username",
+          "tooltip": "Filter devices by enrolled user name in the Zscaler Client Connector portal to identify and manage devices associated with a specific user."
+        },
+        {
+          "title": "OS Type",
+          "description": "Filter by device operating system type in the Zscaler Client Connector.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "osType",
+          "tooltip": "Filter by device operating system type in the Zscaler Client Connector."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "title": "Download Device Details",
+      "operation": "download_device_details",
+      "category": "investigation",
+      "annotation": "download_device_details",
+      "description": "Downloads or exports device information as a CSV file from Zscaler Client Connector based on input parameters that you have specified.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "OS Types",
+          "description": "Filter the list of devices by operating systems. The default value is null, which represents ALL OS types. The following values represent different OS types: iOS, Android, Windows, macOS and Linux.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "osTypes",
+          "tooltip": "Filter the list of devices by operating systems. The default value is null, which represents ALL OS types. The following values represent different OS types: iOS, Android, Windows, macOS and Linux.",
+          "options": [
+            "iOS",
+            "Android",
+            "Windows",
+            "macOS",
+            "Linux"
+          ]
+        },
+        {
+          "title": "Registration Types",
+          "description": "Filter the list of devices by registration types or states. The following values represent different device states: All States Except Removed, Registered, Removal Pending, Unregistered, Removed, and Quarantined.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "registrationTypes",
+          "tooltip": "Filter the list of devices by registration types or states. The following values represent different device states: All States Except Removed, Registered, Removal Pending, Unregistered, Removed, and Quarantined.",
+          "options": [
+            "All States Except Removed",
+            "Registered",
+            "Removal Pending",
+            "Unregistered",
+            "Removed",
+            "Quarantined"
+          ]
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "title": "Download Service Status of Devices",
+      "operation": "download_service_status_of_devices",
+      "category": "investigation",
+      "annotation": "download_service_status_of_devices",
+      "description": "Downloads service status of all devices as a CSV file from Zscaler Client Connector based on input parameters that you have specified.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "OS Types",
+          "description": "Filter the list by operating systems. The default value is null, which represents ALL OS types. The following values represent different OS types: iOS, Android, Windows, macOS and Linux.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "osTypes",
+          "tooltip": "Filter the list by operating systems. The default value is null, which represents ALL OS types. The following values represent different OS types: iOS, Android, Windows, macOS and Linux.",
+          "options": [
+            "iOS",
+            "Android",
+            "Windows",
+            "macOS",
+            "Linux"
+          ]
+        },
+        {
+          "title": "Registration Types",
+          "description": "Filter the list by registration types or states. The following values represent different device states: All States Except Removed, Registered, Removal Pending, Unregistered, Removed, and Quarantined.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "registrationTypes",
+          "tooltip": "Filter the list by registration types or states. The following values represent different device states: All States Except Removed, Registered, Removal Pending, Unregistered, Removed, and Quarantined.",
+          "options": [
+            "All States Except Removed",
+            "Registered",
+            "Removal Pending",
+            "Unregistered",
+            "Removed",
+            "Quarantined"
+          ]
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "execute_an_api_call",
+      "title": "Execute an API Request",
+      "annotation": "execute_an_api_call",
+      "description": "Sends an API request to an API endpoint based on specified HTTP method, endpoint, and other input parameters that you have specified, enabling flexible API interactions tailored to user needs.",
+      "category": "investigation",
+      "visible": true,
+      "enabled": true,
+      "parameters": [
+        {
+          "name": "method",
+          "title": "HTTP Method",
+          "type": "select",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "description": "Select an HTTP action for the request. You can select from the following options:  \n\nDELETE \n\nGET \n\nPATCH \n\nPOST \n\nPUT ",
+          "options": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        },
+        {
+          "title": "Endpoint",
+          "name": "endpoint",
+          "tooltip": "Specify the target API URL path for example: /zcc/papi/public/v1/getDevices",
+          "description": "Specify the target API URL path for the request. For example, if the website is https://example.com and URL path is https://example.com/images/pic.jpg, the endpoint would be /images/pic.jpg.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Query Parameters",
+          "name": "query_params",
+          "description": "(Optional) Specify any optional parameters to add to the URL and refine the request.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "name": "payload",
+          "title": "Request Payload",
+          "type": "json",
+          "editable": true,
+          "visible": true,
+          "required": false,
+          "description": "(Optional) Specify data, as JSON, to be sent as the request payload (typically for POST or PUT requests)."
+        }
+      ],
+      "output_schema": {}
+    }
+  ]
+}
