@@ -9,7 +9,7 @@
   "category": "Network Security",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-zscaler-client-connector/blob/release/1.0.0/docs/readme.md",
   "configuration": {
     "fields": [
       {
